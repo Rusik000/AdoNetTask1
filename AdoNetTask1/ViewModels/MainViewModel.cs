@@ -1,4 +1,5 @@
 ﻿using AdoNetTask1.Command;
+using AdoNetTask1.Views;
 using System;
 using System.Collections.Generic;
 using System.Configuration;
@@ -15,7 +16,9 @@ namespace AdoNetTask1.ViewModels
     {
         public MainWindow MainView { get; set; }
 
+       
         public RelayCommand ShowAllCommand { get; set; }
+        public RelayCommand InsertViewCommand { get; set; }
 
         SqlConnection conn;
 
@@ -40,11 +43,14 @@ namespace AdoNetTask1.ViewModels
                     dataAdapter = new SqlDataAdapter("SELECT * FROM Books;", conn);
 
                     dataAdapter.Fill(set, "mybook");
-                    MainView.MyDataGrid.ItemsSource = set.Tables[0].DefaultView;                                     
+                    MainView.MyDataGrid.ItemsSource = set.Tables[0].DefaultView;
                 }
-
             });
-
+            InsertViewCommand = new RelayCommand(sender =>
+            {
+                InsertView view = new InsertView();
+                view.Show();
+            });
 
 
         }
