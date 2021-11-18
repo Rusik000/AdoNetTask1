@@ -26,5 +26,22 @@ namespace AdoNetTask1
             InitializeComponent();
             this.DataContext = new MainViewModel() { MainView = this };
         }
+
+        private void UpdateNameTextBx_MouseEnter(object sender, MouseEventArgs e)
+        {
+            if (UpdateNameTextBx.Text == "Name")
+            {
+                UpdateNameTextBx.Text = string.Empty;
+            }
+
+        }
+
+        private void UpdateNameTextBx_MouseLeave(object sender, MouseEventArgs e)
+        {
+            if (UpdateNameTextBx.Text == string.Empty)
+            {
+                UpdateNameTextBx.Text = "Name";
+            }
+        }
     }
 }

@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:AdoNetTask1"
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
-    <Grid>
+    <Grid Background="DarkCyan">
         <Canvas>
 
             <StackPanel Orientation="Horizontal">
@@ -14,9 +14,18 @@
                     
                 </Button>
                 
-                <Button Width="100" Height="50" Margin="10" Background="Wheat" FontSize="22" Content="Delete" Foreground="Red">
+                <Button Command="{Binding UpdateCommand}" Width="134" Height="50" Margin="10" Background="Wheat" FontSize="22" Content="Update By Id" Foreground="Red">
 
                 </Button>
+                <TextBox Name="UpdateByIDTextBx" Width="50" Height="50" FontSize="30" > 
+                    
+                </TextBox>
+
+                <TextBox  MouseEnter="UpdateNameTextBx_MouseEnter" MouseLeave="UpdateNameTextBx_MouseLeave" Margin="20,0,0,0" Name="UpdateNameTextBx" Width="100" Height="50" FontSize="30" Text="Name" Foreground="Gray" >
+
+                </TextBox>
+
+
                 <Button Width="100" Height="50" Margin="10" Background="Wheat" Command="{Binding ShowAllCommand }" FontSize="22" Content="Show All" Foreground="Red">
 
                 </Button>
@@ -26,10 +35,10 @@
                 
             </DataGrid>
 
-            <TextBox Width="50" Height="50" Canvas.Left="510" Canvas.Top="150" FontSize="30"  >
+            <TextBox Name="DeleteByIdTxtBx" Width="50" Height="50" Canvas.Left="510" Canvas.Top="150" FontSize="30"  >
                 
             </TextBox>
-            <Button Width="130" Height="50" Margin="10" Background="Wheat" FontSize="22" Content="Delete By Id" Foreground="Red" Canvas.Top="200" Canvas.Left="500"  >
+            <Button Command="{Binding DeleteCommand}" Width="130" Height="50" Margin="10" Background="Wheat" FontSize="22" Content="Delete By Id" Foreground="Red" Canvas.Top="200" Canvas.Left="500"  >
 
             </Button>
 

@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:AdoNetTask1.Views"
         mc:Ignorable="d"
         Title="InsertView" Height="450" Width="800">
-    <Grid>
+    <Grid Background="Aqua">
         <Grid.RowDefinitions>
             <RowDefinition Height="4*"/>
             <RowDefinition Height="*"/>
